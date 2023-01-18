@@ -15,7 +15,6 @@ app.get('/resize/:width/', (req, res) => {
     processor.resize('./Source/image01.JPG', req.params.width).then(r => res.send(res.params.file.filename));
     res.send(res.params.width);
 })
-
 app.get('/secret/get/:path', (req, res) => {
     const data = vault.getSecret(req.params.path);
     res.send(data);
